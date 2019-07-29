@@ -15,7 +15,7 @@
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body">
-            <p class="login-box-msg">{{ trans('adminlte::adminlte.login_message') }}</p>
+            <p class="login-box-msg">Ingresa tus datos para Iniciar Sesion!!</p>
             <form action="{{ url(config('adminlte.login_url', 'login')) }}" method="post">
                 {!! csrf_field() !!}
 
@@ -31,7 +31,7 @@
                 </div>
                 <div class="form-group has-feedback {{ $errors->has('password') ? 'has-error' : '' }}">
                     <input type="password" name="password" class="form-control"
-                           placeholder="{{ trans('adminlte::adminlte.password') }}">
+                           placeholder="Contraseña">
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     @if ($errors->has('password'))
                         <span class="help-block">
@@ -43,22 +43,22 @@
                     <div class="col-xs-8">
                         <div class="checkbox icheck">
                             <label>
-                                <input type="checkbox" name="remember"> {{ trans('adminlte::adminlte.remember_me') }}
+                                <input type="checkbox" name="remember"> Recordar mis Datos
                             </label>
                         </div>
                     </div>
                     <!-- /.col -->
                     <div class="col-xs-4">
                         <button type="submit"
-                                class="btn btn-primary btn-block btn-flat">{{ trans('adminlte::adminlte.sign_in') }}</button>
+                                class="btn btn-primary btn-block btn-flat">Entrar</button>
                     </div>
                     <!-- /.col -->
                 </div>
             </form>
             <div class="auth-links">
-                <a href="{{ url(config('adminlte.password_reset_url', 'password/reset')) }}"
+                <!--<a href="{{ url(config('adminlte.password_reset_url', 'password/reset')) }}"
                    class="text-center"
-                >{{ trans('adminlte::adminlte.i_forgot_my_password') }}</a>
+                >{{ trans('adminlte::adminlte.i_forgot_my_password') }}</a>-->
                 <br>
                 @if (config('adminlte.register_url', 'register'))
                     <!--<a href="{{ url(config('adminlte.register_url', 'register')) }}"
