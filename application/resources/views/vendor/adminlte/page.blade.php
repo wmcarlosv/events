@@ -77,7 +77,9 @@
                                     @endforeach
                                 </ul>
                               </li>
-                              <li class="footer"><a href="{{ route('list_events','today') }}">Ver Todos</a></li>
+                              @if(App\Event::where('event_date','=',date('Y-m-d',strtotime(now())))->get()->count() > 0)
+                                <li class="footer"><a href="{{ route('list_events','today') }}">Ver Todos</a></li>
+                              @endif
                             </ul>
                         </li>
 
@@ -99,7 +101,9 @@
                                   @endforeach
                                 </ul>
                               </li>
-                              <li class="footer"><a href="{{ route('list_events','next') }}">Ver Todos</a></li>
+                              @if(App\Event::where('event_date','>',date('Y-m-d',strtotime(now())))->count() > 0)
+                                <li class="footer"><a href="{{ route('list_events','next') }}">Ver Todos</a></li>
+                              @endif
                             </ul>
                         </li>
 
