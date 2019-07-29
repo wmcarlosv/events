@@ -78,7 +78,7 @@
       header : {
       	left : 'prev, next',
       	center : 'title',
-      	right : 'dayGridDay,dayGridWeek,dayGridMonth'
+      	right : 'dayGridMonth'
       },
       events : [
 
