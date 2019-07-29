@@ -38,6 +38,7 @@
                         <th>Title</th>
                         <th>Cover</th>
                         <th>Event Date</th>
+                        <th>Event Time</th>
                         <th>Status</th>
                         <th>/</th>  
                     </tr>
@@ -56,6 +57,7 @@
                                 @endif
                             </td>
                             <td>{{ date('d-m-Y',strtotime($d->event_date))}}</td>
+                            <td>{{ date('H:m:s',strtotime($d->event_time))}}</td>
                             <td>
                                 @if($d->status == 'open')
                                     <label class="label label-success">Open</label>

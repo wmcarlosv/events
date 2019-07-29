@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'title' => 'Events Admin',
+    'title' => 'Tiempos Mejores',
 
     'title_prefix' => '',
 
@@ -30,9 +30,9 @@ return [
     |
     */
 
-    'logo' => '<b>Events</b> Admin',
+    'logo' => '<b>Tiempos</b> Mejores',
 
-    'logo_mini' => '<b>E</b>AD',
+    'logo_mini' => '<b>T</b>MJ',
 
     /*
     |--------------------------------------------------------------------------

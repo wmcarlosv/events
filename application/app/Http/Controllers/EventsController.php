@@ -19,7 +19,7 @@ class EventsController extends Controller
     public function index()
     {
         $data = Event::all();
-        $title = "Events";
+        $title = "Eventos";
 
         return view($this->view."index",['title' => $title,'data' => $data]);
     }
@@ -31,7 +31,7 @@ class EventsController extends Controller
      */
     public function create()
     {
-        $title = 'New Event';
+        $title = 'Nuevo Evento';
         $action = 'create';
 
         return view($this->view."save",['title' => $title,'action' => $action]);
@@ -48,7 +48,8 @@ class EventsController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'event_date' => 'required'
+            'event_date' => 'required',
+            'event_time' => 'required'
         ]);
 
         $object = new Event();
@@ -56,6 +57,7 @@ class EventsController extends Controller
         $object->title = $request->input('title');
         $object->description = $request->input('description');
         $object->event_date = date('Y-m-d',strtotime($request->input('event_date')));
+        $object->event_time = date('H:m',strtotime($request->input('event_time')));
 
         if($request->hasFile('cover')){
             $object->cover = $request->cover->store('events/covers');
@@ -80,7 +82,10 @@ class EventsController extends Controller
      */
     public function show($id)
     {
-        //
+        $title = 'Descripción del Evento';
+        $data = Event::findorfail($id);
+
+        return view($this->view."show",['title' => $title,'data' => $data]);
     }
 
     /**
@@ -91,7 +96,7 @@ class EventsController extends Controller
      */
     public function edit($id)
     {
-        $title = 'Edit Event';
+        $title = 'Editar Evento';
         $action = 'update';
         $data = Event::findorfail($id);
 
@@ -110,7 +115,8 @@ class EventsController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'event_date' => 'required'
+            'event_date' => 'required',
+            'event_time' => 'required'
         ]);
 
         $object = Event::findorfail($id);
@@ -118,6 +124,7 @@ class EventsController extends Controller
         $object->title = $request->input('title');
         $object->description = $request->input('description');
         $object->event_date = date('Y-m-d',strtotime($request->input('event_date')));
+        $object->event_time = date('H:m',strtotime($request->input('event_time')));
 
         if($request->hasFile('cover')){
             Storage::delete($object->cover);
@@ -156,4 +163,19 @@ class EventsController extends Controller
 
         return redirect()->route($this->router);
     }
+
+    public function list_events($type){
+        $data = [];
+        $title = "";
+        if($type == 'next'){
+            $data = Event::where('event_date','>',date('Y-m-d',strtotime(now())))->get();
+            $title = "Proximos Eventos";
+        }else{
+            $data = Event::where('event_date','=',date('Y-m-d',strtotime(now())))->get();
+            $title = "Eventos de Hoy";
+        }
+
+        return view($this->view."list",['title' => $title,'data' => $data]);
+    }
 }
+

@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $title = "Dashboard";
+        $title = "Escritorio";
         $events = Event::all();
         $users = User::all();
         return view('home',['title' => $title,'events' => $events, 'users' => $users]);

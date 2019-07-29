@@ -18,7 +18,7 @@ class UsersController extends Controller
     public function index()
     {
         $data = User::all();
-        $title = "Users";
+        $title = "Usuarios";
 
         return view($this->view."index",['title' => $title,'data' => $data]);
     }
@@ -30,7 +30,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        $title = 'New User';
+        $title = 'Nuevo Usuario';
         $action = 'create';
 
         return view($this->view."save",['title' => $title,'action' => $action]);
@@ -84,7 +84,7 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        $title = 'Edit User';
+        $title = 'Editar Usuario';
         $action = 'update';
         $data = User::findorfail($id);
 
@@ -141,7 +141,7 @@ class UsersController extends Controller
 
     public function profile(){
         $data = Auth::user();
-        $title = "Profile";
+        $title = "Perfil";
         return view($this->view."profile",['title' => $title,'data' => $data]);
     }
 

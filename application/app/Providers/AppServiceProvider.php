@@ -34,17 +34,17 @@ class AppServiceProvider extends ServiceProvider
 
             $event->menu->add(
                 [
-                    'text' => 'Dashboard',
+                    'text' => 'Escritorio',
                     'route' => 'home',
                     'icon' => 'dashboard'
                 ],
                 [
-                    'text' => 'Profile',
+                    'text' => 'Perfil',
                     'route' => 'profile',
                     'icon' => 'user'
                 ],
                 [
-                    'text' => 'Events',
+                    'text' => 'Eventos',
                     'route' => 'events.index',
                     'icon' => 'calendar'
                 ]
@@ -54,7 +54,7 @@ class AppServiceProvider extends ServiceProvider
 
             if($role == 'administrator'){
                 $event->menu->add([
-                    'text' => 'users',
+                    'text' => 'Usuarios',
                     'route' => 'users.index',
                     'icon' => 'users'
                 ]);

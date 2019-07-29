@@ -20,6 +20,7 @@ class CreateEventsTable extends Migration
             $table->text('description')->nullable(false);
             $table->string('cover',100)->nullable();
             $table->date('event_date')->nullable(false);
+            $table->time('event_time')->nullable(false);
             $table->enum('status',['open','close'])->nullable(false)->default('open');
             $table->timestamps();
 

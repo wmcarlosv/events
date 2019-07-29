@@ -20,7 +20,7 @@
     		<div class="info-box">
 			  <span class="info-box-icon bg-red"><i class="fa fa-users"></i></span>
 			  <div class="info-box-content">
-			    <span class="info-box-text">Users</span>
+			    <span class="info-box-text">Usuarios</span>
 			    <span class="info-box-number">{{ $users->count() }}</span>
 			  </div>
 			</div>
@@ -29,7 +29,7 @@
     		<div class="info-box">
 			  <span class="info-box-icon bg-blue"><i class="fa fa-calendar"></i></span>
 			  <div class="info-box-content">
-			    <span class="info-box-text">Events</span>
+			    <span class="info-box-text">Eventos</span>
 			    <span class="info-box-number">{{ $events->count() }}</span>
 			  </div>
 			</div>
@@ -39,7 +39,7 @@
 	    		<div class="info-box">
 				  <span class="info-box-icon bg-blue"><i class="fa fa-calendar"></i></span>
 				  <div class="info-box-content">
-				    <span class="info-box-text">Events</span>
+				    <span class="info-box-text">Eventos</span>
 				    <span class="info-box-number">{{ $events->count() }}</span>
 				  </div>
 				</div>
@@ -48,9 +48,8 @@
 
     	<div class="row">
 			<div class="col-md-12">
-				<div id='calendar'></div>
-			</div>
-		</div>
+          <div id='calendar'></div>
+  		</div>
     </div>
 @stop
 
@@ -85,7 +84,7 @@
       	@foreach($events as $event)
       		{ 
       			title: '{{ $event->title }} ({{ $event->status }})',
-      			url : '{{ route("events.edit",["id" => $event->id]) }}',
+      			url : '{{ route("events.show",["id" => $event->id]) }}',
       			start: '{{ $event->event_date }}'
       		},
       	@endforeach

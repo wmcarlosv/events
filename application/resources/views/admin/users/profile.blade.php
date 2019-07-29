@@ -35,7 +35,7 @@
 
     <div class="panel panel-default">
     	<div class="panel-heading">
-    		<h2>Change Password</h2>
+    		<h2>Cambiar Contrase&ntilde;a</h2>
     	</div>
     	<div class="panel-body">
     		{!! Form::open(['route' => 'change_password', 'method' => 'PUT', 'autocomplete' => 'off']) !!}

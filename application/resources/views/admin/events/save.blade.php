@@ -47,6 +47,10 @@
                     <label for="event_date">Event Date: </label>
                     <input class="form-control" type="date" name="event_date" id="event_date" value="{{ @$data->event_date }}" />
                 </div>
+                <div class="form-group">
+                    <label for="event_time">Event Time: </label>
+                    <input class="form-control" type="time" name="event_time" id="event_time" value="{{ @$data->event_time }}" />
+                </div>
                 <button class="btn btn-success"><i class="fa fa-floppy-o"></i> Save</button>
                 <a class="btn btn-danger" href="{{ route('events.index') }}"><i class="fa fa-times"></i> Cancel</a>
     		{!! Form::close() !!}

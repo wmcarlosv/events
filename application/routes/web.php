@@ -25,4 +25,5 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
 	Route::put('edit-profile','UsersController@edit_profile')->name('edit_profile');
 	Route::put('change-password','UsersController@change_password')->name('change_password');
 	Route::resource('events','EventsController');
+	Route::get('list-events/{type}','EventsController@list_events')->name('list_events');
 });
