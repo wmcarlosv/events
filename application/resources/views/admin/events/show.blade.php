@@ -27,7 +27,11 @@
                     </tr>
                     <tr>
                         <td colspan="2">
+                            @if(!empty($data->cover))
                             <img src="{{ asset('application/storage/app/'.$data->cover) }}" class="img-thumbnail" width="200" height="200">
+                            @else
+                                <label class="label label-danger">Sin Imagen</label>
+                            @endif
                         </td>
                     </tr>
                     <tr>
