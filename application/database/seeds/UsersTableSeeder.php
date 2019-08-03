@@ -16,7 +16,7 @@ class UsersTableSeeder extends Seeder
         		'name' => 'Administrador',
         		'email' => 'cvargas@frontuari.net',
         		'role' => 'administrator',
-        		'password' => bcrypt('Car2244los*') 
+        		'password' => bcrypt('123456') 
         	],
             [
                 'name' => 'Operator',
